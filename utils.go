@@ -1,6 +1,10 @@
 //Model
 package pgi
 
+import (
+	"fmt"
+)
+
 //Data model for PGI
 type Team struct {
 	Id       int
