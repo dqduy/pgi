@@ -76,7 +76,7 @@ func MakePointDistribution(placement int, point int) PointDistribution {
 }
 
 func SearchTeam(id int) Team {
-	for _, item := range listOfTeam {
+	for _, item := range ListOfTeam {
 		if id == item.Id {
 			return item
 		}
@@ -86,7 +86,7 @@ func SearchTeam(id int) Team {
 }
 
 func SearchPointDistribution(placement int) PointDistribution {
-	for _, item := range listOfPointDistribution {
+	for _, item := range ListOfPointDistribution {
 		if placement == item.Placement {
 			return item
 		}
@@ -99,10 +99,10 @@ func SearchPointDistribution(placement int) PointDistribution {
 
 //Testing
 func DisplayTeams() {
-	if listOfTeam != nil {
-		fmt.Println("Total team: ", len(listOfTeam))
+	if ListOfTeam != nil {
+		fmt.Println("Total team: ", len(ListOfTeam))
 
-		for _, item := range listOfTeam {
+		for _, item := range ListOfTeam {
 			fmt.Println(item.Id, " - ", item.Name, " - ", item.Regional)
 		}
 
@@ -111,10 +111,10 @@ func DisplayTeams() {
 }
 
 func DisplayPointDistribution() {
-	if listOfPointDistribution != nil {
-		fmt.Println("Total point distribution: ", len(listOfPointDistribution))
+	if ListOfPointDistribution != nil {
+		fmt.Println("Total point distribution: ", len(ListOfPointDistribution))
 
-		for _, item := range listOfPointDistribution {
+		for _, item := range ListOfPointDistribution {
 			fmt.Println(item.Placement, " - ", item.Point)
 		}
 		fmt.Print("\n")
@@ -141,10 +141,10 @@ func DisplayMatch(match Match) string {
 }
 
 func DisplayMatches() {
-	if listOfMatchesTpp != nil {
-		fmt.Println("Total matches: ", len(listOfMatchesTpp))
+	if ListOfMatchesTpp != nil {
+		fmt.Println("Total matches: ", len(ListOfMatchesTpp))
 
-		for _, item := range listOfMatchesTpp {
+		for _, item := range ListOfMatchesTpp {
 			fmt.Print(DisplayMatch(item))
 			fmt.Print("\n")
 		}
