@@ -3,6 +3,7 @@ package pgi
 
 import (
 	"fmt"
+	"strconv"
 )
 
 //Data model for PGI
@@ -118,6 +119,25 @@ func DisplayPointDistribution() {
 		}
 		fmt.Print("\n")
 	}
+}
+
+func DisplayMatch(match Match) string {
+	var result = ""
+
+	result = "ID:         " + strconv.Itoa(match.Id) + "\n" +
+		"Match Name: " + match.MatchName + "\n" +
+		"Map:        " + match.MapName
+
+	result += "\n\tDetails: \n"
+
+	for _, item := range match.ListOfMatchDetails {
+		result += item.Team.Name + ", " +
+			item.Team.Regional + ", " +
+			strconv.Itoa(item.Kill) + ", " +
+			strconv.Itoa(item.TotalPoint) + "\n"
+	}
+
+	return result
 }
 
 func DisplayMatches() {
