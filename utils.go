@@ -33,7 +33,7 @@ type MatchDetails struct {
 	TotalPoint int
 }
 
-func (dt *MatchDetails) caculatePoint() {
+func (dt *MatchDetails) CaculatePoint() {
 	dt.TotalPoint = dt.Detail.Point + dt.Kill*15
 }
 
