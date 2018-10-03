@@ -1,5 +1,9 @@
 //Model
-package model
+package pgi
+
+import (
+	"fmt"
+)
 
 //Data model for PGI
 type Team struct {
@@ -62,8 +66,6 @@ var listOfPointDistribution []PointDistribution = make([]PointDistribution, 0)
 var listOfMatchesTpp []Match = make([]Match, 0)
 var listOfMatchesFpp []Match = make([]Match, 0)
 
-const dbName = "pgi.txt"
-
 func MakeTeam(id int, name string, regional string) Team {
 	return Team{id, name, regional}
 }
@@ -92,6 +94,39 @@ func SearchPointDistribution(placement int) PointDistribution {
 	return PointDistribution{0, 15}
 }
 
-func Test() int {
-	return 9
+/////////////////////////////////////////////////////////////
+
+//Testing
+func DisplayTeams() {
+	if listOfTeam != nil {
+		fmt.Println("Total team: ", len(listOfTeam))
+
+		for _, item := range listOfTeam {
+			fmt.Println(item.Id, " - ", item.Name, " - ", item.Regional)
+		}
+
+		fmt.Print("\n")
+	}
+}
+
+func DisplayPointDistribution() {
+	if listOfPointDistribution != nil {
+		fmt.Println("Total point distribution: ", len(listOfPointDistribution))
+
+		for _, item := range listOfPointDistribution {
+			fmt.Println(item.Placement, " - ", item.Point)
+		}
+		fmt.Print("\n")
+	}
+}
+
+func DisplayMatches() {
+	if listOfMatchesTpp != nil {
+		fmt.Println("Total matches: ", len(listOfMatchesTpp))
+
+		for _, item := range listOfMatchesTpp {
+			fmt.Print(DisplayMatch(item))
+			fmt.Print("\n")
+		}
+	}
 }
