@@ -62,10 +62,10 @@ func (this ByPoint) Swap(i, j int) {
 /////////////////////////////////////////////////////////////
 
 //Global data
-var listOfTeam []Team = make([]Team, 0)
-var listOfPointDistribution []PointDistribution = make([]PointDistribution, 0)
-var listOfMatchesTpp []Match = make([]Match, 0)
-var listOfMatchesFpp []Match = make([]Match, 0)
+var ListOfTeam []Team = make([]Team, 0)
+var ListOfPointDistribution []PointDistribution = make([]PointDistribution, 0)
+var ListOfMatchesTpp []Match = make([]Match, 0)
+var ListOfMatchesFpp []Match = make([]Match, 0)
 
 func MakeTeam(id int, name string, regional string) Team {
 	return Team{id, name, regional}
